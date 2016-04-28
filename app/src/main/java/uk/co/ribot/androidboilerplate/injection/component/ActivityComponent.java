@@ -3,6 +3,7 @@ package uk.co.ribot.androidboilerplate.injection.component;
 import dagger.Component;
 import uk.co.ribot.androidboilerplate.injection.PerActivity;
 import uk.co.ribot.androidboilerplate.injection.module.ActivityModule;
+import uk.co.ribot.androidboilerplate.ui.bing.BingActivity;
 import uk.co.ribot.androidboilerplate.ui.main.MainActivity;
 
 /**
@@ -11,7 +12,6 @@ import uk.co.ribot.androidboilerplate.ui.main.MainActivity;
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
-
     void inject(MainActivity mainActivity);
-
+    void inject(BingActivity bingActivity);
 }

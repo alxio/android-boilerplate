@@ -23,12 +23,15 @@ import uk.co.ribot.androidboilerplate.util.DialogFactory;
 public class MainActivity extends BaseActivity implements MainMvpView {
 
     private static final String EXTRA_TRIGGER_SYNC_FLAG =
-            "uk.co.ribot.androidboilerplate.ui.main.MainActivity.EXTRA_TRIGGER_SYNC_FLAG";
+      "uk.co.ribot.androidboilerplate.ui.main.MainActivity.EXTRA_TRIGGER_SYNC_FLAG";
 
-    @Inject MainPresenter mMainPresenter;
-    @Inject RibotsAdapter mRibotsAdapter;
+    @Inject
+    MainPresenter mMainPresenter;
+    @Inject
+    RibotsAdapter mRibotsAdapter;
 
-    @Bind(R.id.recycler_view) RecyclerView mRecyclerView;
+    @Bind(R.id.recycler_view)
+    RecyclerView mRecyclerView;
 
     /**
      * Return an Intent to start this Activity.
@@ -65,7 +68,9 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         mMainPresenter.detachView();
     }
 
-    /***** MVP View methods implementation *****/
+    /*****
+     * MVP View methods implementation
+     *****/
 
     @Override
     public void showRibots(List<Ribot> ribots) {
@@ -76,7 +81,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @Override
     public void showError() {
         DialogFactory.createGenericErrorDialog(this, getString(R.string.error_loading_ribots))
-                .show();
+          .show();
     }
 
     @Override

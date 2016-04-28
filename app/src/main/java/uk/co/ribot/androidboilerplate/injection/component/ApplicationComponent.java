@@ -8,6 +8,7 @@ import com.squareup.otto.Bus;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import uk.co.ribot.androidboilerplate.bing.data.BingDataManager;
 import uk.co.ribot.androidboilerplate.data.DataManager;
 import uk.co.ribot.androidboilerplate.data.SyncService;
 import uk.co.ribot.androidboilerplate.data.local.DatabaseHelper;
@@ -28,6 +29,7 @@ public interface ApplicationComponent {
     PreferencesHelper preferencesHelper();
     DatabaseHelper databaseHelper();
     DataManager dataManager();
+    BingDataManager bingDataManager();
     Bus eventBus();
 
 }

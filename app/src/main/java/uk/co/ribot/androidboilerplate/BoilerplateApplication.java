@@ -6,6 +6,8 @@ import android.content.Context;
 import com.crashlytics.android.Crashlytics;
 
 import io.fabric.sdk.android.Fabric;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import timber.log.Timber;
 import uk.co.ribot.androidboilerplate.injection.component.ApplicationComponent;
 import uk.co.ribot.androidboilerplate.injection.component.DaggerApplicationComponent;
@@ -18,6 +20,9 @@ public class BoilerplateApplication extends Application  {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        RealmConfiguration config = new RealmConfiguration.Builder(this).build();
+        Realm.setDefaultConfiguration(config);
 
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
